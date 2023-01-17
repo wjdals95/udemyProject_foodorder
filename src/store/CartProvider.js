@@ -2,13 +2,13 @@ import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
   const addItemToCartHandler = (item) => {};
-  const removeFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {};
 
   const cartContext = {
-    item: [],
+    items: [],
     totalAmount: 0,
     addItem: addItemToCartHandler,
-    removeItem: removeFromCartHandler,
+    removeItem: removeItemFromCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
