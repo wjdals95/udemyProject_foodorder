@@ -45,9 +45,16 @@ const Checkout = (props) => {
       enteredPostalCodeIsValid &&
       enteredCityIsValid;
 
-    if (formIsValid) {
-      // submit the cart data
+    if (!formIsValid) {
+        return;
     }
+
+    props.onConfirm({
+        name: enteredName,
+        street: enteredStreet,
+        postalCode: enteredPostalCode,
+        city: enteredCity
+    });
   };
   //양식 유효성 검사 후 빈값일 때 calss 추가하기 
   const nameControlClasses = `${classes.control} ${
